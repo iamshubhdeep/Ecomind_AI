@@ -1,0 +1,244 @@
+.routes {
+    padding: 28px 32px;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.header {
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+}
+
+.mapCard {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.mapContainer {
+    height: 520px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.sidePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panelCard {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.panelCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-card);
+    pointer-events: none;
+}
+
+.panelTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.panelDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-emerald);
+}
+
+/* Route Stats */
+.routeStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.routeStat {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+}
+
+.routeStat .statLabel {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.routeStat .statVal {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+/* Bin List */
+.binList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.binItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+    transition: all var(--transition-fast);
+}
+
+.binItem:hover {
+    border-color: var(--border-primary);
+}
+
+.binOrder {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-emerald-dim);
+    color: var(--accent-emerald);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.binInfo {
+    flex: 1;
+}
+
+.binInfo .binName {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.binInfo .binBuilding {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.binFill {
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.binFill.critical {
+    color: var(--accent-red);
+}
+
+.binFill.high {
+    color: var(--accent-orange);
+}
+
+.binFill.medium {
+    color: var(--accent-yellow);
+}
+
+.binFill.low {
+    color: var(--accent-emerald);
+}
+
+/* Priority Legend */
+.priorityLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.priorityItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.priorityDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.optimizeBtn {
+    width: 100%;
+    padding: 12px;
+    background: var(--gradient-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.optimizeBtn:hover {
+    box-shadow: 0 0 24px rgba(52, 211, 153, 0.3);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .routes {
+        padding: 20px 16px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .mapContainer {
+        height: 350px;
+    }
+}
